@@ -1,5 +1,6 @@
 # gatsby-redirect-from
 
+[![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/maintainability)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/maintainability)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/gatsby-redirect-from.svg)](https://greenkeeper.io/)
 
