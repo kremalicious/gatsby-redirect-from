@@ -10,8 +10,7 @@
     "test": "eslint ./*.js",
     "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
-    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build"
+    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive"
   },
   "browserslist": [
     "last 3 versions"
