@@ -1,0 +1,41 @@
+{
+  "name": "gatsby-redirect-from",
+  "version": "0.0.1",
+  "author": "Matthias Kretschmann <m@kretschmann.io>",
+  "description": "Set redirect urls in your YAML frontmatter within your Gatsby site's Markdown files. Mimics the behavior of jekyll-redirect-from.",
+  "homepage": "https://github.com/kremalicious/gatsby-redirect-from",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint ./src/**/*.js",
+    "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive",
+    "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
+    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "release-it": "^7.6.0"
+  },
+  "peerDependencies": {
+    "gatsby": ">=2"
+  },
+  "engines": {
+    "node": "^10.0.0"
+  },
+  "repository": "github:kremalicious/gatsby-redirect-from",
+  "bugs": {
+    "url": "https://github.com/kremalicious/gatsby-redirect-from/issues"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "redirect"
+  ]
+}
