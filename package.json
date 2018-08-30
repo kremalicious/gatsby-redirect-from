@@ -7,18 +7,25 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ./*.js",
+    "build": "babel src --out-dir . --ignore __tests__",
+    "start": "babel -w src --out-dir . --ignore __tests__",
+    "test": "eslint ./src/**/*.js",
     "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
-    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive"
+    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "browserslist": [
-    "last 3 versions"
+    "last 2 versions"
   ],
   "dependencies": {
     "chalk": "^2.4.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "cross-env": "^5.2.0",
     "eslint": "^5.4.0",
     "release-it": "^7.6.0"
   },

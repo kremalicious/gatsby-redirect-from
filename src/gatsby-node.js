@@ -1,8 +1,6 @@
-'use strict'
+import chalk from 'chalk'
 
-const chalk = require('chalk')
-
-exports.createPages = ({ graphql, actions }) => {
+export function createPages({ graphql, actions }) {
   const { createRedirect } = actions
 
   return new Promise((resolve, reject) => {
@@ -59,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
         resolve(
-          console.log(`${chalk.green('success')} Create redirects`) // eslint-disable-line no-console
+          console.log(`${chalk.green('success')} create redirects`) // eslint-disable-line no-console
         )
       })
     )
