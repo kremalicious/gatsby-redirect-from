@@ -43,17 +43,28 @@ export function createPages({ graphql, actions }) {
           })
         })
 
+        const createRedirectTemplate = (from, to) => {
+          createRedirect({
+            fromPath: from,
+            toPath: to,
+            isPermanent: true,
+            redirectInBrowser: true
+          })
+        }
+
         // Create redirects from the just constructed array
         redirects.forEach(({ from, to }) => {
-          // iterate through all `from` array items
-          from.forEach(from => {
-            createRedirect({
-              fromPath: from,
-              toPath: to,
-              isPermanent: true,
-              redirectInBrowser: true
+          // `from` is a string when only a single value is set
+          if (typeof 'string' === from) {
+            createRedirectTemplate(from, to)
+          }
+          // otherwise `from` is a list array
+          else {
+            // iterate through all `from` array items
+            from.forEach(from => {
+              createRedirectTemplate(from, to)
             })
-          })
+          }
         })
 
         resolve(
