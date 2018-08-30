@@ -1,18 +1,31 @@
 # gatsby-redirect-from
 
 [![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
+[![Build Status](https://travis-ci.com/kremalicious/gatsby-redirect-from.svg?branch=master)](https://travis-ci.com/kremalicious/gatsby-redirect-from)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/maintainability)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/maintainability)
 [![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/gatsby-redirect-from.svg)](https://greenkeeper.io/)
 
-> Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
+> 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 
 By adding a list of urls to the YAML frontmatter, this plugin creates redirects for all of them at build time. It uses Gatsby's [createRedirect](https://next.gatsbyjs.org/docs/actions/#createRedirect) under the hood.
+
+## Table of Contents
+
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Plugin Development](#plugin-development)
+  - [License](#license)
+
+---
 
 ## Prerequisites
 
 - Gatsby v2
-- only parses Markdown files delivered from [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)
-- `slug` on `fields`
+- Markdown files delivered from [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)
+- `slug` on `allMarkdownRemark.edges.node.fields`
+
+Plugin assumes the default setup from [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog), with Markdown files processing by [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) and adding a field `slug` for each file node. Head over to gatsby-starter-blog's [gatsby-node.js](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57) file to see how this is done.
 
 ## Installation
 
@@ -43,7 +56,7 @@ redirect_from:
 ---
 ```
 
-## Development
+## Plugin Development
 
 ```bash
 npm i
