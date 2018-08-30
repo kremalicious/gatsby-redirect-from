@@ -13,6 +13,7 @@ By adding a list of urls to the YAML frontmatter, this plugin creates redirects 
 
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+     - [Server Rendering](#server-rendering)
   - [Usage](#usage)
   - [Plugin Development](#plugin-development)
   - [License](#license)
@@ -31,14 +32,25 @@ Plugin assumes the default setup from [gatsby-starter-blog](https://github.com/g
 
 ```bash
 cd yourproject/
-npm i gatsby-redirect-from
+npm i gatsby-redirect-from gatsby-plugin-meta-redirect
 ```
 
-Then load the plugin from your `gatsby-config.js`:
+Then load the plugin along with [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect) from your `gatsby-config.js`:
 
 ```js
-plugins: ['gatsby-redirect-from']
+plugins: [
+  'gatsby-redirect-from',
+  'gatsby-plugin-meta-redirect' // make sure this is always the last one
+]
 ```
+
+### Server Rendering
+
+Gatsby's `createRedirect` only creates client-side redirects, so further integration is needed to get server redirects too. Which is highly dependent on your hosting, if you want to have the proper HTML status codes like `301`, Apache needs `.htaccess` rules for that, nginx `rewrite` rules, S3 `RoutingRules` and so on.
+
+One simple way, as suggested in installation, is to use [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect) to generate static HTML files with a `<meta http-equiv="refresh" />` tag for every `createRedirect` call. So it works out of the box with this plugin without further adjustments.
+
+This way is the most compatible way of handling redirects, working with pretty much every hosting provider. Only catch: it's only for usability, no SEO-friendly `301` redirect is set anywhere.
 
 ## Usage
 

@@ -30,7 +30,8 @@
     "release-it": "^7.6.0"
   },
   "peerDependencies": {
-    "gatsby": ">=2"
+    "gatsby": ">=2",
+    "gatsby-plugin-meta-redirect": ">=1.1.0"
   },
   "engines": {
     "node": "^10.0.0"
