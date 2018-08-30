@@ -35,12 +35,28 @@ In your Markdown file's YAML frontmatter, use the key `redirect_from` followed b
 ---
 title: Aperture File Types
 redirect_from:
-  # forward slashes are required
   - /new-goodies-aperture-file-types-icons/
   - /goodie-updated-aperture-file-types-v11/
   - /aperture-file-types-v12-released/
   - /2008/04/aperture-file-types/
+  # note: forward slashes are required
 ---
+```
+
+## Development
+
+```bash
+npm i
+npm start
+
+# production build
+npm run build
+
+# publishing to npm & GitHub releases
+# uses https://github.com/webpro/release-it
+npm run release
+npm run release-minor
+npm run release-major
 ```
 
 ## License
