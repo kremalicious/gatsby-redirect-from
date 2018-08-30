@@ -1,6 +1,6 @@
 {
   "name": "gatsby-redirect-from",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "description": "Set redirect urls in your YAML frontmatter within your Gatsby site's Markdown files. Mimics the behavior of jekyll-redirect-from.",
   "homepage": "https://github.com/kremalicious/gatsby-redirect-from",
