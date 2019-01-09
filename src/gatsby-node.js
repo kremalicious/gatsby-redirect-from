@@ -10,7 +10,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
       graphql(
         `
           {
-            ${markdownQuery}(
+            q: ${markdownQuery}(
               filter: { frontmatter: { redirect_from: { ne: null } } }
             ) {
               edges {
@@ -32,7 +32,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
           reject(result.errors)
         }
 
-        const allPosts = result.data.allMarkdownRemark.edges
+        const allPosts = result.data.q.edges
 
         const redirects = []
 
