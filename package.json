@@ -13,6 +13,7 @@
     "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
+    "format": "prettier --write 'src/**/*.{js,jsx}'",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "browserslist": [
@@ -26,6 +27,9 @@
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
     "release-it": "^12.3.0"
   },
   "peerDependencies": {
