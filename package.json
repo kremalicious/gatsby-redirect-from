@@ -49,9 +49,9 @@
     "redirect"
   ],
   "release-it": {
-    "scripts": {
-      "beforeStart": "npm test",
-      "beforeStage": "npm run changelog"
+    "hooks": {
+      "before:init": "npm test",
+      "after:bump": "npm run changelog"
     },
     "git": {
       "tagName": "v${version}"
