@@ -1,15 +1,6 @@
 {
-  "extends": ["eslint:recommended"],
-  "rules": {
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
-  },
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
