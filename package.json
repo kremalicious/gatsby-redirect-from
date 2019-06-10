@@ -10,10 +10,9 @@
     "build": "babel src --out-dir . --ignore __tests__",
     "start": "babel -w src --out-dir . --ignore __tests__",
     "test": "eslint ./src/**/*.js",
-    "release": "./node_modules/release-it/bin/release-it.js --src.tagName='v%s' --github.release --npm.publish --non-interactive",
-    "release-minor": "./node_modules/release-it/bin/release-it.js minor --src.tagName='v%s' --github.release --npm.publish --non-interactive",
-    "release-major": "./node_modules/release-it/bin/release-it.js major --src.tagName='v%s' --github.release --npm.publish --non-interactive",
     "format": "prettier --write 'src/**/*.{js,jsx}'",
+    "release": "release-it --non-interactive",
+    "changelog": "auto-changelog -p",
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "browserslist": [
@@ -24,6 +23,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "auto-changelog": "^1.13.0",
     "chalk": "^2.4.2",
     "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
@@ -47,5 +47,20 @@
     "gatsby",
     "gatsby-plugin",
     "redirect"
-  ]
+  ],
+  "release-it": {
+    "scripts": {
+      "beforeStart": "npm test",
+      "beforeStage": "npm run changelog"
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    }
+  }
 }

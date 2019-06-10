@@ -77,9 +77,9 @@ redirect_from:
 
 Plugin does not require to be configured but some additional customization options are available:
 
-| Option | Default | Description |
-|---|---|---|
-| query | `allMarkdownRemark` | Modify the query being used to get the frontmatter data. E.g. if you use MDX, set `allMdx` here. |
+| Option | Default             | Description                                                                                      |
+| ------ | ------------------- | ------------------------------------------------------------------------------------------------ |
+| query  | `allMarkdownRemark` | Modify the query being used to get the frontmatter data. E.g. if you use MDX, set `allMdx` here. |
 
 Add options to the plugins's configuration object in `gatsby-config.js` like so:
 
@@ -107,8 +107,8 @@ npm run build
 # publishing to npm & GitHub releases
 # uses https://github.com/webpro/release-it
 npm run release
-npm run release-minor
-npm run release-major
+npm run release minor
+npm run release major
 ```
 
 ## License
