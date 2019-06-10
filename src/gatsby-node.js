@@ -1,14 +1,16 @@
 import chalk from 'chalk'
 
-export function createPages({ graphql, actions }) {
+export function createPages({ graphql, actions }, pluginOptions) {
   const { createRedirect } = actions
+
+  const markdownQuery = pluginOptions.query || 'allMarkdownRemark'
 
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark(
+            q: ${markdownQuery}(
               filter: { frontmatter: { redirect_from: { ne: null } } }
             ) {
               edges {
@@ -30,7 +32,7 @@ export function createPages({ graphql, actions }) {
           reject(result.errors)
         }
 
-        const allPosts = result.data.allMarkdownRemark.edges
+        const allPosts = result.data.q.edges
 
         const redirects = []
 
