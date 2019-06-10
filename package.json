@@ -16,7 +16,7 @@
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "browserslist": [
-    "default"
+    "maintained node versions"
   ],
   "dependencies": {},
   "devDependencies": {
