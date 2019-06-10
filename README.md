@@ -7,16 +7,17 @@
 
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 
-By adding a list of urls to the YAML frontmatter, this plugin creates redirects for all of them at build time. It uses Gatsby's [createRedirect](https://next.gatsbyjs.org/docs/actions/#createRedirect) under the hood.
+By adding a list of urls to the YAML frontmatter, this plugin creates redirects for all of them at build time. It uses Gatsby's [createRedirect](https://www.gatsbyjs.org/docs/actions/#createRedirect) under the hood.
 
-## Table of Contents
+**Table of Contents**
 
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-     - [Server Rendering](#server-rendering)
-  - [Usage](#usage)
-  - [Plugin Development](#plugin-development)
-  - [License](#license)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  - [Server Rendering](#server-rendering)
+- [Usage](#usage)
+- [Options](#options)
+- [Plugin Development](#plugin-development)
+- [License](#license)
 
 ---
 
@@ -27,6 +28,8 @@ By adding a list of urls to the YAML frontmatter, this plugin creates redirects 
 - `slug` on `allMarkdownRemark.edges.node.fields`
 
 Plugin assumes the default setup from [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog), with Markdown files processing by [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) and adding a field `slug` for each file node. Head over to gatsby-starter-blog's [gatsby-node.js](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57) file to see how this is done.
+
+If this does not fit your setup, you can [configure the default `query`](#options) being used.
 
 ## Installation
 
@@ -43,6 +46,8 @@ plugins: [
   'gatsby-plugin-meta-redirect' // make sure this is always the last one
 ]
 ```
+
+That's it. See [Usage](#usage).
 
 ### Server Rendering
 
@@ -68,6 +73,28 @@ redirect_from:
 ---
 ```
 
+## Options
+
+Plugin does not require to be configured but some additional customization options are available:
+
+| Option | Default | Description |
+|---|---|---|
+| query | `allMarkdownRemark` | Modify the query being used to get the frontmatter data. E.g. if you use MDX, set `allMdx` here. |
+
+Add options to the plugins's configuration object in `gatsby-config.js` like so:
+
+```js
+plugins: [
+  {
+    resolve: 'gatsby-redirect-from',
+    options: {
+      query: 'allMdx'
+    }
+  }
+  'gatsby-plugin-meta-redirect' // make sure this is always the last one
+]
+```
+
 ## Plugin Development
 
 ```bash
@@ -88,7 +115,7 @@ npm run release-major
 
 The MIT License
 
-Copyright (c) 2018 Matthias Kretschmann
+Copyright (c) 2019 Matthias Kretschmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
