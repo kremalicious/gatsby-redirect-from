@@ -3,7 +3,7 @@
 [![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
 [![Build Status](https://travis-ci.com/kremalicious/gatsby-redirect-from.svg?branch=master)](https://travis-ci.com/kremalicious/gatsby-redirect-from)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/maintainability)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/maintainability)
-[![Greenkeeper badge](https://badges.greenkeeper.io/kremalicious/gatsby-redirect-from.svg)](https://greenkeeper.io/)
+[![Dependabot enabled](https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot)](https://dependabot.com/)
 
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 
