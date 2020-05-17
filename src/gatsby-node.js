@@ -26,7 +26,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors) // eslint-disable-line no-console
           reject(result.errors)
@@ -38,7 +38,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
 
         // For all posts with redirect_from frontmatter,
         // extract all values and push to redirects array
-        allPosts.forEach(post => {
+        allPosts.forEach((post) => {
           redirects.push({
             from: post.node.frontmatter.redirect_from,
             to: post.node.fields.slug
@@ -48,7 +48,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
         // Create redirects from the just constructed array
         redirects.forEach(({ from, to }) => {
           // iterate through all `from` array items
-          from.forEach(from => {
+          from.forEach((from) => {
             createRedirect({
               fromPath: from,
               toPath: to,
