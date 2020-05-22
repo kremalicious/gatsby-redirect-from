@@ -1,3 +1,5 @@
+[![gatsby-redirect-from](https://raw.githubusercontent.com/kremalicious/gatsby-redirect-from/master/src/gatsby-redirect-from.png)](https://kremalicious.com/gatsby-redirect-from/)
+
 # gatsby-redirect-from
 
 [![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
@@ -6,6 +8,7 @@
 [![Dependabot enabled](https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot)](https://dependabot.com/)
 
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
+> https://kremalicious.com/gatsby-redirect-from/
 
 By adding a list of urls to the YAML frontmatter, this plugin creates redirects for all of them at build time. It uses Gatsby's [createRedirect](https://www.gatsbyjs.org/docs/actions/#createRedirect) under the hood.
 
@@ -13,10 +16,11 @@ By adding a list of urls to the YAML frontmatter, this plugin creates redirects 
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-  - [Server Rendering](#server-rendering)
+  - [Server-Side Redirects](#server-side-redirects)
 - [Usage](#usage)
 - [Options](#options)
 - [Plugin Development](#plugin-development)
+- [Changelog](#changelog)
 - [License](#license)
 
 ---
@@ -49,7 +53,7 @@ plugins: [
 
 That's it. See [Usage](#usage).
 
-### Server Rendering
+### Server-Side Redirects
 
 Gatsby's `createRedirect` only creates client-side redirects, so further integration is needed to get server redirects too. Which is highly dependent on your hosting, if you want to have the proper HTML status codes like `301`, Apache needs `.htaccess` rules for that, nginx `rewrite` rules, S3 `RoutingRules` and so on.
 
@@ -71,6 +75,7 @@ redirect_from:
   - /2008/04/aperture-file-types/
   # note: forward slashes are required
 ---
+
 ```
 
 ## Options
@@ -110,6 +115,10 @@ npm run release
 npm run release minor
 npm run release major
 ```
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 

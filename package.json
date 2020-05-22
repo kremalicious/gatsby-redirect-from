@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "description": "Set redirect urls in your YAML frontmatter within your Gatsby site's Markdown files. Mimics the behavior of jekyll-redirect-from.",
-  "homepage": "https://github.com/kremalicious/gatsby-redirect-from",
+  "homepage": "https://kremalicious.com/gatsby-redirect-from/",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
