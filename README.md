@@ -10,15 +10,18 @@
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 > https://kremalicious.com/gatsby-redirect-from/
 
-By adding a list of urls to the YAML frontmatter, this plugin creates redirects for all of them at build time. It uses Gatsby's [createRedirect](https://www.gatsbyjs.org/docs/actions/#createRedirect) under the hood.
+By adding a `redirect_from` list of URLs to your Markdown file's YAML frontmatter, this plugin creates client-side redirects for all of them at build time, with Gatsby's [`createRedirect`](https://www.gatsbyjs.org/docs/actions/#createRedirect) used under the hood.
+
+By combining this plugin with [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect), you get simple server-side redirects from your `redirect_from` lists out of the box. You can also combine it with any other plugin picking up Gatsby `createRedirect` calls to get [proper SEO-friendly server-side redirects](https://kremalicious.com/gatsby-redirect-from/#server-side-redirects) for your hosting provider.
+
+---
 
 **Table of Contents**
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-  - [Server-Side Redirects](#server-side-redirects)
 - [Usage](#usage)
-- [Options](#options)
+- [Documentation](#documentation)
 - [Plugin Development](#plugin-development)
 - [Changelog](#changelog)
 - [License](#license)
@@ -31,10 +34,6 @@ By adding a list of urls to the YAML frontmatter, this plugin creates redirects 
 - Markdown files delivered from [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark)
 - `slug` on `allMarkdownRemark.edges.node.fields`
 
-Plugin assumes the default setup from [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog), with Markdown files processing by [gatsby-transformer-remark](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-remark) and adding a field `slug` for each file node. Head over to gatsby-starter-blog's [gatsby-node.js](https://github.com/gatsbyjs/gatsby-starter-blog/blob/master/gatsby-node.js#L57) file to see how this is done.
-
-If this does not fit your setup, you can [configure the default `query`](#options) being used.
-
 ## Installation
 
 ```bash
@@ -42,7 +41,7 @@ cd yourproject/
 npm i gatsby-redirect-from gatsby-plugin-meta-redirect
 ```
 
-Then load the plugin along with [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect) from your `gatsby-config.js`:
+Then load the plugin along with e.g. [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect) from your `gatsby-config.js`:
 
 ```js
 plugins: [
@@ -51,15 +50,7 @@ plugins: [
 ]
 ```
 
-That's it. See [Usage](#usage).
-
-### Server-Side Redirects
-
-Gatsby's `createRedirect` only creates client-side redirects, so further integration is needed to get server redirects too. Which is highly dependent on your hosting, if you want to have the proper HTML status codes like `301`, Apache needs `.htaccess` rules for that, nginx `rewrite` rules, S3 `RoutingRules` and so on.
-
-One simple way, as suggested in installation, is to use [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect) to generate static HTML files with a `<meta http-equiv="refresh" />` tag for every `createRedirect` call. So it works out of the box with this plugin without further adjustments.
-
-This way is the most compatible way of handling redirects, working with pretty much every hosting provider. Only catch: it's only for usability, no SEO-friendly `301` redirect is set anywhere.
+That's it.
 
 ## Usage
 
@@ -73,32 +64,16 @@ redirect_from:
   - /goodie-updated-aperture-file-types-v11/
   - /aperture-file-types-v12-released/
   - /2008/04/aperture-file-types/
-  # note: forward slashes are required
+  # note: trailing slashes are required
 ---
 
 ```
 
-## Options
+## [Documentation](https://kremalicious.com/gatsby-redirect-from/)
 
-Plugin does not require to be configured but some additional customization options are available:
+More explanations and options, all about server-side redirects, and additional plugins which can be used in combination with gatsby-redirect-from.
 
-| Option | Default             | Description                                                                                      |
-| ------ | ------------------- | ------------------------------------------------------------------------------------------------ |
-| query  | `allMarkdownRemark` | Modify the query being used to get the frontmatter data. E.g. if you use MDX, set `allMdx` here. |
-
-Add options to the plugins's configuration object in `gatsby-config.js` like so:
-
-```js
-plugins: [
-  {
-    resolve: 'gatsby-redirect-from',
-    options: {
-      query: 'allMdx'
-    }
-  },
-  'gatsby-plugin-meta-redirect' // make sure this is always the last one
-]
-```
+- **[Documentation →](https://kremalicious.com/gatsby-redirect-from/)**
 
 ## Plugin Development
 
@@ -124,7 +99,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 The MIT License
 
-Copyright (c) 2019 Matthias Kretschmann
+Copyright (c) 2020 Matthias Kretschmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
