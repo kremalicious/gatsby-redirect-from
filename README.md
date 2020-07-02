@@ -1,9 +1,9 @@
-[![gatsby-redirect-from](https://raw.githubusercontent.com/kremalicious/gatsby-redirect-from/master/src/gatsby-redirect-from.png)](https://kremalicious.com/gatsby-redirect-from/)
+[![gatsby-redirect-from](https://raw.githubusercontent.com/kremalicious/gatsby-redirect-from/main/src/gatsby-redirect-from.png)](https://kremalicious.com/gatsby-redirect-from/)
 
 # gatsby-redirect-from
 
 [![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
-[![Build Status](https://travis-ci.com/kremalicious/gatsby-redirect-from.svg?branch=master)](https://travis-ci.com/kremalicious/gatsby-redirect-from)
+[![Build Status](https://travis-ci.com/kremalicious/gatsby-redirect-from.svg?branch=main)](https://travis-ci.com/kremalicious/gatsby-redirect-from)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/maintainability)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/maintainability)
 [![Dependabot enabled](https://badgen.net/dependabot/thepracticaldev/dev.to?icon=dependabot)](https://dependabot.com/)
 
