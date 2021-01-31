@@ -86,8 +86,6 @@ npm run build
 # publishing to npm & GitHub releases
 # uses https://github.com/webpro/release-it
 npm run release
-npm run release minor
-npm run release major
 ```
 
 ## Changelog
