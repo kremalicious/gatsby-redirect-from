@@ -20,24 +20,24 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "auto-changelog": "^2.1.0",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "auto-changelog": "^2.2.1",
     "chalk": "^4.1.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.3.1",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5",
-    "release-it": "^14.0.1"
+    "cross-env": "^7.0.3",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "release-it": "^14.2.2"
   },
   "peerDependencies": {
     "gatsby": ">=2",
     "gatsby-plugin-meta-redirect": ">=1.1.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12"
   },
   "repository": "github:kremalicious/gatsby-redirect-from",
   "bugs": {
