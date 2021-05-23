@@ -34,7 +34,7 @@
     "release-it": "^14.2.2"
   },
   "peerDependencies": {
-    "gatsby": ">=2",
+    "gatsby": "^2.0.0 || ^3.0.0",
     "gatsby-plugin-meta-redirect": ">=1.1.0"
   },
   "engines": {
