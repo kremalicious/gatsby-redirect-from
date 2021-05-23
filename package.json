@@ -18,9 +18,10 @@
   "browserslist": [
     "maintained node versions"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/helper-define-map": "^7.13.12",
     "@babel/preset-env": "^7.14.2",
     "auto-changelog": "^2.2.1",
     "chalk": "^4.1.1",
