@@ -19,18 +19,18 @@
     "maintained node versions"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
-    "@babel/helper-define-map": "^7.13.12",
-    "@babel/preset-env": "^7.14.2",
-    "auto-changelog": "^2.2.1",
-    "chalk": "^4.1.1",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/helper-define-map": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "auto-changelog": "^2.3.0",
+    "chalk": "^5.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.0.0",
+    "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.3.0",
-    "release-it": "^14.6.2"
+    "prettier": "^2.5.0",
+    "release-it": "^14.11.8"
   },
   "peerDependencies": {
     "gatsby": "^2.0.0 || ^3.0.0 || ^4.0.0",
