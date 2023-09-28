@@ -1,0 +1,5 @@
+{
+  "rootDir": "../",
+  "coverageDirectory": "<rootDir>/coverage/",
+  "transformIgnorePatterns": ["node_modules/(?!chalk/.*)"]
+}

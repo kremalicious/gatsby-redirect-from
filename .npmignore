@@ -1,6 +1,6 @@
 node_modules
 src
-.babelrc
+test
+babel.config.json
 .editorconfig
 .eslintrc
-.travis.yml
