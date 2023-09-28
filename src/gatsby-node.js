@@ -30,6 +30,7 @@ export function createPages({ graphql, actions }, pluginOptions) {
         if (result.errors) {
           console.log(result.errors) // eslint-disable-line no-console
           reject(result.errors)
+          return
         }
 
         const allPosts = result.data.q.edges

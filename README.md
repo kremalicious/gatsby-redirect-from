@@ -5,6 +5,7 @@
 [![npm package](https://img.shields.io/npm/v/gatsby-redirect-from.svg)](https://www.npmjs.com/package/gatsby-redirect-from)
 [![Build Status](https://github.com/kremalicious/gatsby-redirect-from/workflows/CI/badge.svg)](https://github.com/kremalicious/gatsby-redirect-from/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/maintainability)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9643b2a038a7d338a73a/test_coverage)](https://codeclimate.com/github/kremalicious/gatsby-redirect-from/test_coverage)
 
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 > https://kremalicious.com/gatsby-redirect-from/
@@ -65,7 +66,6 @@ redirect_from:
   - /2008/04/aperture-file-types/
   # note: trailing slashes are required
 ---
-
 ```
 
 ## [Documentation](https://kremalicious.com/gatsby-redirect-from/)
