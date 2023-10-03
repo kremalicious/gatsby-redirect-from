@@ -1,68 +1,100 @@
-import chalk from 'chalk'
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
 
-export function createPages({ graphql, actions }, pluginOptions) {
+  // Define the type definitions for the `MarkdownRemark` node
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      fields: MarkdownRemarkFields
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFields {
+      slug: String
+    }
+
+    type MarkdownRemarkFrontmatter {
+      slug: String
+    }
+  `
+
+  // Create the type definitions
+  createTypes(typeDefs)
+}
+
+export async function createPages({ graphql, actions }, pluginOptions) {
   const { createRedirect } = actions
-
   const markdownQuery = pluginOptions.query || 'allMarkdownRemark'
 
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            q: ${markdownQuery}(
-              filter: { frontmatter: { redirect_from: { ne: null } } }
-            ) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    redirect_from
-                  }
-                }
+  try {
+    const { data } = await graphql(`
+      {
+        q: ${markdownQuery}(filter: { frontmatter: { redirect_from: { ne: null } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                slug
+                redirect_from
               }
             }
           }
-        `
-      ).then((result) => {
-        if (result.errors) {
-          console.log(result.errors) // eslint-disable-line no-console
-          reject(result.errors)
-          return
         }
+      }
+    `)
 
-        const allPosts = result.data.q.edges
+    const allPosts = data?.q?.edges
 
-        const redirects = []
+    if (!allPosts || allPosts.length === 0) {
+      console.log(
+        '%c %s %c %s',
+        'color:orange',
+        'warning',
+        'color:none',
+        'no posts with redirect_from found'
+      )
+      return
+    }
 
-        // For all posts with redirect_from frontmatter,
-        // extract all values and push to redirects array
-        allPosts.forEach((post) => {
-          redirects.push({
-            from: post.node.frontmatter.redirect_from,
-            to: post.node.fields.slug
-          })
-        })
+    const redirects = []
 
-        // Create redirects from the just constructed array
-        redirects.forEach(({ from, to }) => {
-          // iterate through all `from` array items
-          from.forEach((from) => {
-            createRedirect({
-              fromPath: from,
-              toPath: to,
-              isPermanent: true,
-              redirectInBrowser: true
-            })
-          })
-        })
-
-        resolve(
-          console.log(`${chalk.green('success')} create redirects`) // eslint-disable-line no-console
+    allPosts.forEach(({ node }) => {
+      let _slug
+      const { redirect_from, slug } = node.frontmatter
+      if (!slug) _slug = node.fields?.slug
+      if (!_slug) {
+        console.log(
+          '%c %s %c %s',
+          'color:orange',
+          'warning',
+          'color:none',
+          'no slug found in frontmatter or fields'
         )
+        return
+      }
+
+      redirect_from.forEach((from) => {
+        redirects.push({ from, to: _slug })
       })
+    })
+
+    redirects.forEach(({ from, to }) => {
+      createRedirect({
+        fromPath: from,
+        toPath: to,
+        isPermanent: true,
+        redirectInBrowser: true
+      })
+    })
+    console.log(
+      '%c %s %c %s',
+      'color:green',
+      'success',
+      'color:none',
+      `created ${redirects.length} redirects`
     )
-  })
+  } catch (error) {
+    console.error(error.message)
+  }
 }
