@@ -24,6 +24,7 @@ By combining this plugin with [gatsby-plugin-meta-redirect](https://github.com/g
 - [Documentation](#documentation)
 - [Plugin Development](#plugin-development)
 - [Changelog](#changelog)
+- [Sponsorship](#sponsorship)
 - [License](#license)
 
 ---
@@ -92,6 +93,12 @@ npm run release
 
 See [CHANGELOG.md](CHANGELOG.md).
 
+## Sponsorship
+
+[![](https://img.shields.io/static/v1?label=Say%20Thanks%20With%20Web3&labelColor=%2343a699&message=%E2%9D%A4&logo=Ethereum&color=%23fe8e86&style=for-the-badge)](https://kremalicious.com/thanks)
+
+[![](https://img.shields.io/static/v1?label=Say%20Thanks%20With%20GitHub&labelColor=%2343a699&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86&style=for-the-badge)](https://github.com/sponsors/kremalicious)
+
 ## License
 
 The MIT License
@@ -107,9 +114,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ---
 
 Made with ♥ by [Matthias Kretschmann](https://matthiaskretschmann.com) ([@kremalicious](https://github.com/kremalicious))
-
-Say thanks with BTC:
-`35UUssHexVK48jbiSgTxa4QihEoCqrwCTG`
-
-Say thanks with ETH:
-`0x04354F554536DA108726829207958d3E277f0210`
