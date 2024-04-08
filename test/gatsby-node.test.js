@@ -107,7 +107,7 @@ describe('createPages', () => {
       'color:green',
       'success',
       'color:none',
-      'create redirects'
+      'created 3 redirects'
     )
   })
 
