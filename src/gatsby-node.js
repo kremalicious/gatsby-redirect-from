@@ -62,7 +62,7 @@ export async function createPages({ graphql, actions }, pluginOptions) {
     allPosts.forEach(({ node }) => {
       let _slug
       const { redirect_from, slug } = node.frontmatter
-      if (!slug) _slug = node.fields?.slug
+      _slug = slug || node.fields?.slug;
       if (!_slug) {
         console.log(
           '%c %s %c %s',
