@@ -20,9 +20,9 @@
     "maintained node versions"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.24.1",
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
+    "@babel/cli": "^7.24.7",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
     "auto-changelog": "^2.4.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.50.0",
