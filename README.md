@@ -10,6 +10,8 @@
 > 🎯 Set redirect urls in your YAML frontmatter within your [Gatsby](https://www.gatsbyjs.org) site's Markdown files. Mimics the behavior of [jekyll-redirect-from](https://github.com/jekyll/jekyll-redirect-from).
 > https://kremalicious.com/gatsby-redirect-from/
 
+**Deprecation notice: [Gatsby has been abandoned](https://github.com/gatsbyjs/gatsby/issues/38696) so maintaining this plugin does not make much sense. It will only receive occasional dependency updates and will be archived at the end of 2024. If you choose to switch to [Astro](https://astro.build), you can use [astro-redirect-from](https://github.com/kremalicious/astro-redirect-from).**
+
 By adding a `redirect_from` list of URLs to your Markdown file's YAML frontmatter, this plugin creates client-side redirects for all of them at build time, with Gatsby's [`createRedirect`](https://www.gatsbyjs.org/docs/actions/#createRedirect) used under the hood.
 
 By combining this plugin with [gatsby-plugin-meta-redirect](https://github.com/getchalk/gatsby-plugin-meta-redirect), you get simple server-side redirects from your `redirect_from` lists out of the box. You can also combine it with any other plugin picking up Gatsby `createRedirect` calls to get [proper SEO-friendly server-side redirects](https://kremalicious.com/gatsby-redirect-from/#server-side-redirects) for your hosting provider.
