@@ -1,6 +1,6 @@
 {
 	"name": "gatsby-redirect-from",
-	"version": "1.2.1",
+	"version": "1.3.0",
 	"author": "Matthias Kretschmann <m@kretschmann.io>",
 	"description": "Set redirect urls in your YAML frontmatter within your Gatsby site's Markdown files. Mimics the behavior of jekyll-redirect-from.",
 	"homepage": "https://kremalicious.com/gatsby-redirect-from/",
@@ -16,7 +16,9 @@
 		"changelog": "auto-changelog -p",
 		"prepublishOnly": "npm run build"
 	},
-	"browserslist": ["maintained node versions"],
+	"browserslist": [
+		"maintained node versions"
+	],
 	"devDependencies": {
 		"@babel/cli": "^7.26.4",
 		"@babel/core": "^7.26.0",
@@ -42,7 +44,11 @@
 	"bugs": {
 		"url": "https://github.com/kremalicious/gatsby-redirect-from/issues"
 	},
-	"keywords": ["gatsby", "gatsby-plugin", "redirect"],
+	"keywords": [
+		"gatsby",
+		"gatsby-plugin",
+		"redirect"
+	],
 	"release-it": {
 		"hooks": {
 			"before:init": "npm test",
